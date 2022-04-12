@@ -1,0 +1,47 @@
+input {
+    margin: 5px;
+}
+
+main {
+    margin-top: 1px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    margin: 5px;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.logo {
+    padding-top: 4%;
+    margin-top: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    transition: 500ms;
+}
+
+footer {
+    background-color: rgb(26, 24, 24)  !important;
+}
+
+h6 {
+    color: rgb(255, 254, 254);
+}
+
