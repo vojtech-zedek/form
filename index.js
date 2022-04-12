@@ -40,7 +40,7 @@ app.get('/vysledky',(req,res)=>{
     csv().fromFile('./data/vysledky.csv')
     .then(data=>{
         console.log(data);
-        res.render('vysledky.pug',{'players':data,'nadpis':'vysledky zavodu'});
+        res.render('vysledky.pug',{'players':data,'nadpis':'Výsledky závodu'});
         
     })
     .catch(err=>{
