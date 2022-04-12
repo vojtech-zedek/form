@@ -5,7 +5,7 @@ html
         title Výsledky závodu
         style  
     body 
-        header.jumbotron-fluid.bg-danger.p-3
+        header.jumbotron-fluid.bg-danger.p-4
             h1.text-center.text-white #{nadpis}
         main.container 
         table(class="table table-striped")
@@ -16,7 +16,7 @@ html
                     th Čas v minutách
                     th Délka v km
             tbody 
-                each pl in players S
+                each pl in players 
                     tr
                         td #{pl.jmeno}
                         td #{pl.vek}
