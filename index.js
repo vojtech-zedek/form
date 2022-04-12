@@ -3,11 +3,15 @@ const app = express();
 const port = 3000;
 const fs = require('fs');
 const path = require('path');
+
+const csv = require('csvtojson');
 const bodyParser = require('body-parser');
 
 
-
 app.use(express.static("public"));
+
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
 const urlencodedParser = bodyParser.urlencoded({
     extended: false
@@ -30,6 +34,18 @@ app.post('/save', urlencodedParser, (req, res) => {
         }
     });
     res.redirect(301, '/');
+});
+
+app.get('/vysledky',(req,res)=>{
+    csv().fromFile('./data/vysledky.csv')
+    .then(data=>{
+        console.log(data);
+        res.render('vysledky.pug',{'players':data,'nadpis':'vysledky zavodu'});
+        
+    })
+    .catch(err=>{
+        console.log(err);
+    })
 });
 
 app.listen(port, () => {
